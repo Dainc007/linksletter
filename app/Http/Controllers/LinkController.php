@@ -6,10 +6,12 @@ use App\Http\Requests\StoreLinkRequest;
 use App\Http\Requests\UpdateLinkRequest;
 use App\Models\Link;
 use App\Models\User;
+
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
+
 
 class LinkController extends Controller
 {
@@ -44,7 +46,7 @@ class LinkController extends Controller
         );
 
         // If there is no position, set it to the last
-        if (!$link->position) {
+        if (! $link->position) {
             $link->position = Link::max('position') + 1;
             $link->save();
         }
