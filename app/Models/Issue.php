@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Issue extends Model
 {
-    /** @use HasFactory<\Database\Factories\IssueFactory> */
     use HasFactory;
+
+    protected $guarded = [];
+
 }

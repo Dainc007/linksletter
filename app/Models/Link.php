@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Link extends Model
 {
-    /** @use HasFactory<\Database\Factories\LinkFactory> */
     use HasFactory;
+
+    protected $guarded = [];
 }

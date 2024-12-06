@@ -11,7 +11,7 @@ class UpdateLinkRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateLinkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'url' => ['required', 'string', 'url'],
+            'title' => ['required', 'string'],
+            'description' => ['nullable', 'string'],
+            'position' => ['nullable', 'integer'],
         ];
     }
 }
