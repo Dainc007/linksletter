@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IssueController;
 use App\Http\Controllers\LinkController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,5 @@ require __DIR__.'/auth.php';
 
 Route::resources([
     'links' => LinkController::class,
+    'issues' => IssueController::class,
 ]);

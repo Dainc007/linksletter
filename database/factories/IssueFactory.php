@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,15 @@ class IssueFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'subject' => $this->faker->word(),
+            'header_text' => $this->faker->text(),
+            'footer_text' => $this->faker->text(),
+            'links_html' => $this->faker->word(),
+            'sent_at' => Carbon::now(),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+
+            'user_id' => User::factory(),
         ];
     }
 }
